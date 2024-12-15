@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --text: #170903;
+  --background: rgb(254, 248, 246);
+  --primary: #e55e24;
+  --secondary: #ec9c79;
+  --accent: #f74c02;
+}
+
+/* :root[data-theme="light"] {
+  --text: #170903;
+  --background: #fef8f6;
+  --primary: #e55e24;
+  --secondary: #ec9c79;
+  --accent: #f74c02;
+}
+:root[data-theme="dark"] {
+  --text: #fceee8;
+  --background: #090301;
+  --primary: #db541a;
+  --secondary: #863613;
+  --accent: #fd5108;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  font-family: "Audiowide", "Roboto Mono", sans-serif;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: rgb(254, 248, 246);
+  background: linear-gradient(rgb(254, 248, 246), rgba(247, 76, 2, 0.97));
+  z-index: 1;
+}
+
+.menu {
+  display: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding-right: 2rem;
+}
+
+nav a {
+  font-size: 1.35rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+header button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.left {
+  background: linear-gradient(rgba(255, 140, 90, 0.75), rgba(247, 76, 2, 0.9));
+  border: 1.5px solid var(--text);
+  margin-right: 0.5rem;
+}
+
+button.left:hover {
+  background: var(--background);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+button.right {
+  background-color: var(--background);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+button.right:hover {
+  background: linear-gradient(rgba(255, 140, 90, 0.75), rgba(247, 76, 2, 0.9));
+  border: 1.5px solid var(--text);
+  color: var(--text);
+}
+
+#hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25vh;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  position: relative;
+  font-family: "Audiowide", "Roboto Mono", sans-serif;
+  font-size: clamp(1.5rem, 3.5rem, 4.5rem);
+  font-weight: 900;
+  max-width: 100%;
+  min-width: 60%;
+}
+
+.video-container {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.video-container video {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+form {
+  font-size: 1.7rem;
+  color: var(--primary);
+  margin: 1rem 0;
+}
+
+input {
+  margin-top: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--text);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--accent);
+}
+
+input::placeholder {
+  color: var(--secondary);
+}
+
+input[type="email"] {
+  width: 70%;
+  font-size: 1.4rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--secondary);
+}
+
+input[type="submit"] {
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.25rem 0.5rem;
+  background: linear-gradient(rgba(255, 140, 90, 0.75), rgba(247, 76, 2, 0.9));
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: var(--background);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 1000px) {
+  header a,
+  header button {
+    display: none;
+  }
+  .menu {
+    display: block;
+    fill: var(--text);
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 475px) {
+  #hero {
+    margin-top: 12vh;
+  }
+}
